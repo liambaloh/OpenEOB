@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="Tiles.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="360.06176"
+     inkscape:cy="1836.8745"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       position="-51.971725,498.36162"
+       orientation="1,0"
+       id="guide875"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.6934522,423.71132"
+       orientation="0,1"
+       id="guide881"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="69.831101,487.49479"
+       orientation="1,0"
+       id="guide907"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="193.90404,483.62421"
+       orientation="1,0"
+       id="guide909"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ffd5d5;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect815"
+       width="111.125"
+       height="111.125"
+       x="-107.34524"
+       y="-182.27382"
+       inkscape:export-filename="C:\Github\OpenEOB\Assets\Graphics\Walls\wall.png"
+       inkscape:export-xdpi="117.03"
+       inkscape:export-ydpi="117.03" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ffeeaa;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect815-7"
+       width="111.125"
+       height="111.125"
+       x="14.363095"
+       y="-182.27382"
+       inkscape:export-filename="C:\Github\OpenEOB\Assets\Graphics\Floors\floor.png"
+       inkscape:export-xdpi="117.03"
+       inkscape:export-ydpi="117.03" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ccffaa;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect815-7-8"
+       width="111.125"
+       height="111.125"
+       x="138.33928"
+       y="-182.27382"
+       inkscape:export-filename="C:\Github\OpenEOB\Assets\Graphics\Ceilings\ceiling.png"
+       inkscape:export-xdpi="117.03"
+       inkscape:export-ydpi="117.03" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect815-7-8-1"
+       width="111.125"
+       height="111.125"
+       x="261.55951"
+       y="-182.27382" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.77224493;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect871"
+       width="9.4880676"
+       height="55.725697"
+       x="-56.761364"
+       y="-148.89728"
+       inkscape:export-filename="C:\Github\OpenEOB\Assets\Graphics\Walls\wall.png"
+       inkscape:export-xdpi="117.03"
+       inkscape:export-ydpi="117.03" />
+    <path
+       style="fill:#f2f2f2;stroke:none;stroke-width:0.19101758px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -73.187017,-142.37922 20.935826,-20.93582 20.935824,20.93582 h -40.135037 z"
+       id="path873"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Github\OpenEOB\Assets\Graphics\Walls\wall.png"
+       inkscape:export-xdpi="117.03"
+       inkscape:export-ydpi="117.03" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-52.205585"
+       y="-122.8392"
+       id="text879"
+       inkscape:export-filename="C:\Github\OpenEOB\Assets\Graphics\Walls\wall.png"
+       inkscape:export-xdpi="117.03"
+       inkscape:export-ydpi="117.03"><tspan
+         sodipodi:role="line"
+         id="tspan877"
+         x="-52.205585"
+         y="-122.8392"
+         style="stroke-width:0.26458332">WALL</tspan></text>
+    <rect
+       style="opacity:1;vector-effect:none;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.77224493;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect871-6"
+       width="9.4880676"
+       height="55.725697"
+       x="65.320923"
+       y="-148.89728" />
+    <path
+       style="fill:#f2f2f2;stroke:none;stroke-width:0.1910176px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 48.895275,-142.37923 20.935826,-20.93582 20.935825,20.93582 H 50.631888 Z"
+       id="path873-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="69.876701"
+       y="-122.83921"
+       id="text879-1"><tspan
+         sodipodi:role="line"
+         id="tspan877-2"
+         x="69.876701"
+         y="-122.83921"
+         style="stroke-width:0.26458332">FLOR</tspan></text>
+    <rect
+       style="opacity:1;vector-effect:none;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.77224493;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect871-6-1"
+       width="9.4880676"
+       height="55.725697"
+       x="189.39195"
+       y="-148.89728" />
+    <path
+       style="fill:#f2f2f2;stroke:none;stroke-width:0.19101761px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 172.9663,-142.37923 20.93583,-20.93582 20.93582,20.93582 h -40.13504 z"
+       id="path873-2-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="193.94774"
+       y="-122.8392"
+       id="text879-1-5"><tspan
+         sodipodi:role="line"
+         id="tspan877-2-6"
+         x="193.94774"
+         y="-122.8392"
+         style="stroke-width:0.26458332">CEILING</tspan></text>
+  </g>
+</svg>
