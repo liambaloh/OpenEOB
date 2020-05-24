@@ -6,7 +6,7 @@ namespace OpenEoB
     [System.Serializable]
     public class TileGraphics
     {
-        public const string BlankWallId = "E";
+        public const string BlankWallId = "EE";
         public Renderer TileRenderer;
         
         public void SetGraphic(TileGraphicsConfig tileGraphicsConfig, string graphicsId)

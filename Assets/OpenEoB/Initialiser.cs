@@ -23,7 +23,7 @@ namespace OpenEoB
 
         private void GenerateMap()
         {
-            var mapLines = File.ReadAllLines(Application.streamingAssetsPath + "/map.txt");
+            var mapLines = File.ReadAllLines(Application.streamingAssetsPath + "/gladstone.txt");
 
             for (var lineNumber = 0; lineNumber < mapLines.Length; lineNumber++)
             {
@@ -32,7 +32,7 @@ namespace OpenEoB
                 for (var tileIndex = 0; tileIndex < tileStrings.Length; tileIndex++)
                 {
                     var tileString = tileStrings[tileIndex];
-                    var tileX = lineNumber;
+                    var tileX = mapLines.Length - lineNumber;
                     var tileY = tileIndex;
 
                     if (tileString.StartsWith("[") && tileString.EndsWith("]"))

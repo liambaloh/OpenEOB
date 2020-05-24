@@ -1,1 +1,3 @@
-[W|W|E|W|F|C];[W|W|E|E|F|C];[W|W|W|E|F|C];
+             ;             ;[E|W|W|W|F|C];
+[W|W|E|W|F|C];[W|W|E|E|F|C];[E|E|W|E|F|C];
+             ;             ;[W|E|W|W|F|C];
