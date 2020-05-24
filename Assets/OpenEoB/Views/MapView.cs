@@ -38,8 +38,8 @@ namespace OpenEoB.Views
                 for (var tileIndex = 0; tileIndex < tileStrings.Length; tileIndex++)
                 {
                     var tileString = tileStrings[tileIndex];
-                    var tileX = mapLines.Length - lineNumber;
-                    var tileY = tileIndex;
+                    var tileX = tileIndex;
+                    var tileY = mapLines.Length - lineNumber;
 
                     if (tileString.StartsWith("[") && tileString.EndsWith("]"))
                     {
@@ -61,7 +61,7 @@ namespace OpenEoB.Views
                         var tile = Instantiate(_tilePrefab, _tilesParent);
                         var tileTransform = tile.transform;
 
-                        tileTransform.localPosition = new Vector3(tileY, 0, tileX);
+                        tileTransform.localPosition = new Vector3(tileX, 0, tileY);
                         tileTransform.localScale = Vector3.one;
                         tileTransform.localRotation = Quaternion.identity;
 

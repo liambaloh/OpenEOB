@@ -1,4 +1,5 @@
-﻿using OpenEoB.Config;
+﻿using System.Collections.Generic;
+using OpenEoB.Config;
 using UnityEngine;
 
 namespace OpenEoB.Views
@@ -19,11 +20,13 @@ namespace OpenEoB.Views
         [SerializeField] private TileGraphics _floor;
         [SerializeField] private TileGraphics _ceiling;
         [SerializeField] private Transform _objectsParent;
+        private List<TileObjectView> _tileObjects;
 
         public void Setup(int x, int y, string wallNorthId, string wallSouthId, string wallEastId, string wallWestId, string floorId, string ceilingId, string tileObjectId)
         {
             X = x;
             Y = y;
+            _tileObjects = new List<TileObjectView>();
             
             _wallNorth.SetGraphic(_tileGraphicsConfig, wallNorthId);
             _wallSouth.SetGraphic(_tileGraphicsConfig, wallSouthId);
@@ -42,6 +45,30 @@ namespace OpenEoB.Views
                 tileObjectTransform.localScale = Vector3.one;
                 
                 tileObject.Setup(this);
+                _tileObjects.Add(tileObject);
+            }
+        }
+
+        public bool CanPlayerEnterTile()
+        {
+            foreach (var tileObjectView in _tileObjects)
+            {
+                if (tileObjectView.CanPlayerEnterTile())
+                {
+                    continue;
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
+        public void Bump()
+        {
+            foreach (var tileObjectView in _tileObjects)
+            {
+                tileObjectView.Bump();
             }
         }
     }

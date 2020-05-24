@@ -290,6 +290,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3224302247308223399}
   - component: {fileID: 4181178750871314798}
+  - component: {fileID: 2627062976433648963}
+  - component: {fileID: 1880159276620925446}
   m_Layer: 0
   m_Name: Gladstone Tile Door
   m_TagString: Untagged
@@ -324,6 +326,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a0433277056e774c89e131d69cc6b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTileEnterView: {fileID: 2627062976433648963}
+  _playerTileBumpView: {fileID: 1880159276620925446}
+--- !u!114 &2627062976433648963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783125337382840768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f264b55002c68842b9abf72ef27884f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canPlayerEnterTile: 0
+--- !u!114 &1880159276620925446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783125337382840768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd62e770286b0fb4a94a43228b2d4909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6192827155152899719

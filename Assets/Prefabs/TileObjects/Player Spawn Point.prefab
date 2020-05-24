@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6137747831097202736}
   - component: {fileID: 957508157047287059}
+  - component: {fileID: 7560771628230381234}
+  - component: {fileID: 9147873814218590551}
   m_Layer: 0
   m_Name: Player Spawn Point
   m_TagString: Untagged
@@ -41,5 +43,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7663bd7b943f85a4cb1b291bfddee225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTileEnterView: {fileID: 7560771628230381234}
+  _playerTileBumpView: {fileID: 9147873814218590551}
+--- !u!114 &7560771628230381234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460602389077268106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04931fada21b5684c9d21c708a115cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9147873814218590551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460602389077268106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd62e770286b0fb4a94a43228b2d4909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
