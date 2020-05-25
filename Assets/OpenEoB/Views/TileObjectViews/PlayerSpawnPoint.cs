@@ -1,8 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Tilemaps;
-
-namespace OpenEoB.Views.TileObjectViews
+﻿namespace OpenEoB.Views.TileObjectViews
 {
     public class PlayerSpawnPoint : TileObjectView
     {

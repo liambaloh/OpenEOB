@@ -1,4 +1,4 @@
-﻿namespace OpenEoB.Views.PlayerTileEnterView
+﻿namespace OpenEoB.Views.PlayerTileEnterViews
 {
     public class PlayerTileAlwaysEnterView : AbstractPlayerTileEnterView
     {

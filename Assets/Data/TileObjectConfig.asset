@@ -21,3 +21,6 @@ MonoBehaviour:
       type: 3}
   - Id: XC
     Prefab: {fileID: 957508157047287059, guid: 103e27cc1f6116e439ab1ffa677fdcbf, type: 3}
+  - Id: XD
+    Prefab: {fileID: -3169935651002375137, guid: df6deb353add32345ba115230431946c,
+      type: 3}

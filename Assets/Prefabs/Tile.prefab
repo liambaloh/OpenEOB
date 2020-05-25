@@ -243,16 +243,22 @@ MonoBehaviour:
   _tileObjectConfig: {fileID: 11400000, guid: 2b2b6e29b3da9664b91efc59bf6de03e, type: 2}
   _wallNorth:
     TileRenderer: {fileID: 4294899635011752285}
+    TileCollider: {fileID: 4294899635011752282}
   _wallSouth:
     TileRenderer: {fileID: 4294899633148844105}
+    TileCollider: {fileID: 4294899633148844102}
   _wallEast:
     TileRenderer: {fileID: 4294899635181326013}
+    TileCollider: {fileID: 4294899635181326010}
   _wallWest:
     TileRenderer: {fileID: 4294899634721525677}
+    TileCollider: {fileID: 4294899634721525674}
   _floor:
     TileRenderer: {fileID: 4294899633087725014}
+    TileCollider: {fileID: 4294899633087725015}
   _ceiling:
     TileRenderer: {fileID: 4294899634363245640}
+    TileCollider: {fileID: 4294899634363245641}
   _objectsParent: {fileID: 181887198210457447}
 --- !u!1 &4294899634363245639
 GameObject:

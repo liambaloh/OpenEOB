@@ -1,10 +1,10 @@
-﻿namespace OpenEoB.Views.PlayerTileEnterView
+﻿namespace OpenEoB.Views.PlayerTileEnterViews
 {
     public class PlayerTileNeverEnterView : AbstractPlayerTileEnterView
     {
         public override bool CanPlayerEnterTile()
         {
-            return true;
+            return false;
         }
     }
 }

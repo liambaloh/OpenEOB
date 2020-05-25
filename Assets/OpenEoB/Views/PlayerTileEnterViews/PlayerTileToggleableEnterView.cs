@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace OpenEoB.Views.PlayerTileEnterView
+namespace OpenEoB.Views.PlayerTileEnterViews
 {
     public class PlayerTileToggleableEnterView : AbstractPlayerTileEnterView
     {
