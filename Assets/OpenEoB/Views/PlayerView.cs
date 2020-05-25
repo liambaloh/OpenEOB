@@ -1,4 +1,5 @@
 ﻿using System;
+using OpenEoB.Views.UI;
 using UnityEngine;
 
 namespace OpenEoB.Views
@@ -9,7 +10,7 @@ namespace OpenEoB.Views
         private const int South = 2;
         private const int East = 4;
         private const int West = 8;
-        
+
         private const float MovementSpeed = 10f;
         private const float RotationSpeed = 10f;
 
@@ -23,37 +24,18 @@ namespace OpenEoB.Views
             this.transform.position = _location.transform.position;
         }
 
+        private void Start()
+        {
+            InputManager.Instance.RegisterAction(Command.MoveForward, this, MoveForward);
+            InputManager.Instance.RegisterAction(Command.MoveBackward, this, MoveBackward);
+            InputManager.Instance.RegisterAction(Command.TurnLeft, this, FaceLeft);
+            InputManager.Instance.RegisterAction(Command.TurnRight, this, FaceRight);
+            InputManager.Instance.RegisterAction(Command.StrafeLeft, this, MoveLeft);
+            InputManager.Instance.RegisterAction(Command.StrafeRight, this, MoveRight);
+        }
+
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            {
-                MoveForward();
-            }
-
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                MoveBackward();
-            }
-
-            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-            {
-                MoveRight();
-            }
-
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-            {
-                MoveLeft();
-            }
-            
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                FaceLeft();
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                FaceRight();
-            }
-
             var thisPosition2D = new Vector2(this.transform.position.x, this.transform.position.z);
             var locationPosition2D = new Vector2(_location.transform.position.x, _location.transform.position.z);
             var thisRotation = ClampRotation0To360(this.transform.rotation.eulerAngles.y);
@@ -61,7 +43,8 @@ namespace OpenEoB.Views
 
             if (Vector2.Distance(thisPosition2D, locationPosition2D) > 0.01f)
             {
-                var newPosition2D = Vector2.MoveTowards(thisPosition2D, locationPosition2D, MovementSpeed * Time.deltaTime);
+                var newPosition2D =
+                    Vector2.MoveTowards(thisPosition2D, locationPosition2D, MovementSpeed * Time.deltaTime);
                 this.transform.position = new Vector3(newPosition2D.x, this.transform.position.y, newPosition2D.y);
             }
 
@@ -76,8 +59,11 @@ namespace OpenEoB.Views
                 {
                     this.transform.Rotate(0, -90 * RotationSpeed * Time.deltaTime, 0);
                 }
-                var differenceInRotationAfterRotation = ClampRotationToSigned180(ClampRotation0To360(this.transform.rotation.eulerAngles.y) - facingRotation);
-                if (differenceInRotationAfterRotation * differenceInRotation < 0)   //sign changed
+
+                var differenceInRotationAfterRotation =
+                    ClampRotationToSigned180(
+                        ClampRotation0To360(this.transform.rotation.eulerAngles.y) - facingRotation);
+                if (differenceInRotationAfterRotation * differenceInRotation < 0) //sign changed
                 {
                     this.transform.rotation = Quaternion.Euler(0, facingRotation, 0);
                 }
@@ -98,6 +84,7 @@ namespace OpenEoB.Views
             {
                 result += 360f;
             }
+
             return result;
         }
 
@@ -113,6 +100,7 @@ namespace OpenEoB.Views
             {
                 result -= 360;
             }
+
             return result;
         }
 
@@ -148,7 +136,7 @@ namespace OpenEoB.Views
                 }
             }
         }
-        
+
         private void MoveNorth()
         {
             Move(0, 1);
