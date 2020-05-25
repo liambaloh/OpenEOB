@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 2627062976433648963}
   - component: {fileID: 1880159276620925446}
   m_Layer: 0
-  m_Name: Gladstone Tile Door
+  m_Name: Gladstone Tile Door S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6877566446986871406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6877566446986871413}
+  - component: {fileID: 6877566446986871402}
+  - component: {fileID: 6877566446986871403}
+  - component: {fileID: 6877566446986871400}
+  - component: {fileID: 6877566446986871401}
+  m_Layer: 0
+  m_Name: Quad (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6877566446986871413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877566446986871406}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5.9878, y: 0.4974, z: 2.5054}
+  m_LocalScale: {x: 0.39020184, y: 0.6793067, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!33 &6877566446986871402
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877566446986871406}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6877566446986871403
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877566446986871406}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0931d00c8bff47d4f9ec75e2e5b5cfec, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &6877566446986871400
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877566446986871406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6877566446986871401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877566446986871406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd1f4b977b8850468927ff48ccbf2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6877566446986871403}
+  _textures:
+  - {fileID: 2800000, guid: 7c41a1a7eb85dff4dad82c218ed1bfb5, type: 3}
+  - {fileID: 2800000, guid: 9c4a24a551c78bc4eb2d7946d0b8b724, type: 3}
+  - {fileID: 2800000, guid: e2d2a21189de6134881dda97d3d49c0b, type: 3}
+  - {fileID: 2800000, guid: c7e145b5aaf56cb47ab58779161450ba, type: 3}
+  - {fileID: 2800000, guid: 8f8f705a03355294294342df091b7de0, type: 3}
+  - {fileID: 2800000, guid: 2d72fd1f2991d974cb62337fef6a980e, type: 3}
+  - {fileID: 2800000, guid: 6eb69111f86f74342bef0ed97369733a, type: 3}
+  - {fileID: 2800000, guid: f08e6659ad45592409ee29a6cf29d684, type: 3}
+  - {fileID: 2800000, guid: 887529386e356e44794072a6f8e71da3, type: 3}
+  - {fileID: 2800000, guid: c8a42e1aaabc0f84b8a8c0d17495231d, type: 3}
+  - {fileID: 2800000, guid: 3096f149d7d347844b65bd9e2432d7a3, type: 3}
+  - {fileID: 2800000, guid: c8cc0e29fc5c57444a6e0c423861ed3a, type: 3}
+  _timeBetweenSprites: 0.4
+  _animationPlaying: 0
