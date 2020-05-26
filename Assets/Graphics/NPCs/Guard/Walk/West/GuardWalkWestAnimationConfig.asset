@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c59f887ac26b44fbc7eca298d06929, type: 3}
+  m_Name: GuardWalkWestAnimationConfig
+  m_EditorClassIdentifier: 
+  _frames:
+  - {fileID: 2800000, guid: de70e82de07b03143a9b3fdd7d863c60, type: 3}
+  - {fileID: 2800000, guid: 94fd8bac10451ef47956efdcc8414175, type: 3}
+  - {fileID: 2800000, guid: 5c01ca26fcf82354dac3a4e3ef4e3a04, type: 3}
+  - {fileID: 2800000, guid: 8d57ecf53d08ce6409fa6a52b1e0fdb9, type: 3}

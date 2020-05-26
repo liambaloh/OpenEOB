@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2809486215246574793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2377136884129197095}
+  m_Layer: 0
+  m_Name: NPCs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2377136884129197095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809486215246574793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4294899633867922988}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4294899633087725013
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +253,7 @@ Transform:
   - {fileID: 4294899633087725012}
   - {fileID: 4294899634363245638}
   - {fileID: 181887198210457447}
+  - {fileID: 2377136884129197095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -241,6 +272,7 @@ MonoBehaviour:
   _tileGraphicsConfig: {fileID: 11400000, guid: f56e623d28474924c90693f81aeeebe9,
     type: 2}
   _tileObjectConfig: {fileID: 11400000, guid: 2b2b6e29b3da9664b91efc59bf6de03e, type: 2}
+  _npcConfig: {fileID: 11400000, guid: b706b1b9580f35b4fa12bb6bd90e8b3b, type: 2}
   _wallNorth:
     TileRenderer: {fileID: 4294899635011752285}
     TileCollider: {fileID: 4294899635011752282}
@@ -260,6 +292,7 @@ MonoBehaviour:
     TileRenderer: {fileID: 4294899634363245640}
     TileCollider: {fileID: 4294899634363245641}
   _objectsParent: {fileID: 181887198210457447}
+  _npcsParent: {fileID: 2377136884129197095}
 --- !u!1 &4294899634363245639
 GameObject:
   m_ObjectHideFlags: 0

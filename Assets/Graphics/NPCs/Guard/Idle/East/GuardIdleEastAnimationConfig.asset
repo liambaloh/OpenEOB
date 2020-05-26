@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c59f887ac26b44fbc7eca298d06929, type: 3}
+  m_Name: GuardIdleEastAnimationConfig
+  m_EditorClassIdentifier: 
+  _frames:
+  - {fileID: 2800000, guid: 896b49bee33e30342bdcac89eb43123d, type: 3}
+  - {fileID: 2800000, guid: 6aac9c73a0017ae4e8c92bead65c523f, type: 3}
+  - {fileID: 2800000, guid: c53b98b86e5f9a349868e72cca281d19, type: 3}
+  - {fileID: 2800000, guid: 095fda4e50f8baf468115b40835db3cd, type: 3}

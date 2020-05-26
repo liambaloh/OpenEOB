@@ -53,7 +53,7 @@ namespace OpenEoB
 
         public void TriggerEvent(EventId eventId)
         {
-            UnityEngine.Debug.Log("Event triggered: eventId");
+            UnityEngine.Debug.Log("Event triggered: " + eventId);
             if (_actions.ContainsKey(eventId))
             {
                 foreach (var eventAction in _actions[eventId])

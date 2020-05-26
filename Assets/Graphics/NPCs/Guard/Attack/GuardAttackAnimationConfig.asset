@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c59f887ac26b44fbc7eca298d06929, type: 3}
+  m_Name: GuardAttackAnimationConfig
+  m_EditorClassIdentifier: 
+  _frames:
+  - {fileID: 2800000, guid: 5c871c7cdd52669458fa1966c24e54bc, type: 3}
+  - {fileID: 2800000, guid: 5712e1456cdd4fb489648ee0d77495e4, type: 3}
+  - {fileID: 2800000, guid: b29c69e9ddee20a4cb042bffb4c33787, type: 3}
+  - {fileID: 2800000, guid: 35a22ec1f27ec1143a411a177e2753ea, type: 3}

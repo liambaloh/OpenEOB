@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using OpenEoB.Views;
+﻿using OpenEoB.Views;
 using OpenEoB.Views.Items;
 using UnityEngine;
 

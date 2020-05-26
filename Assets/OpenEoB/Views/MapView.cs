@@ -45,7 +45,7 @@ namespace OpenEoB.Views
                     {
                         tileString = tileString.Substring(1, tileString.Length - 2);
                         var tileDescriptors = tileString.Split('|');
-                        if (tileDescriptors.Length != 7)
+                        if (tileDescriptors.Length != 8)
                         {
                             throw new Exception("Cannot parse tile descriptor: " + tileDescriptors);
                         }
@@ -57,6 +57,7 @@ namespace OpenEoB.Views
                         var floorId = tileDescriptors[4].Trim();
                         var ceilingId = tileDescriptors[5].Trim();
                         var tileObjectId = tileDescriptors[6].Trim();
+                        var npcId = tileDescriptors[7].Trim();
 
                         var tile = Instantiate(_tilePrefab, _tilesParent);
                         var tileTransform = tile.transform;
@@ -66,7 +67,7 @@ namespace OpenEoB.Views
                         tileTransform.localRotation = Quaternion.identity;
 
                         tile.Setup(tileX, tileY, wallNorthId, wallSouthId, wallEastId, wallWestId, floorId, ceilingId,
-                            tileObjectId);
+                            tileObjectId, npcId);
 
                         _tiles.Add(new Tuple<int, int>(tileX, tileY), tile);
                     }

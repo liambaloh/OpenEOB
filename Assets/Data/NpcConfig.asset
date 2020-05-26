@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: NpcConfig
+  m_EditorClassIdentifier: Assembly-CSharp:OpenEoB.Config:NpcConfig
+  _npcDatums:
+  - Id: YB
+    Prefab: {fileID: 5207403401019456296, guid: 2aebf7c44af583a4ca8e8217fd754ca6,
+      type: 3}
+    InitialNpcState: 1
+    _animations:
+    - NpcState: 1
+      AnimationFrameTime: 2
+      AnimationGeneral: {fileID: 0}
+      AnimationNorth: {fileID: 11400000, guid: b55f10e64e01e61438d75e0b729ebf7c, type: 2}
+      AnimationSouth: {fileID: 11400000, guid: 597fe2373b1c4a54caf948bc5e327d20, type: 2}
+      AnimationEast: {fileID: 11400000, guid: 65dfca3a27804904cbf8aaad5cef5fc2, type: 2}
+      AnimationWest: {fileID: 11400000, guid: 132f8692f1d7f204f8a658263674fe30, type: 2}
+    - NpcState: 2
+      AnimationFrameTime: 0.4
+      AnimationGeneral: {fileID: 0}
+      AnimationNorth: {fileID: 0}
+      AnimationSouth: {fileID: 0}
+      AnimationEast: {fileID: 0}
+      AnimationWest: {fileID: 0}
+    - NpcState: 3
+      AnimationFrameTime: 0.2
+      AnimationGeneral: {fileID: 11400000, guid: 7347467405bd677459209df0a094e240,
+        type: 2}
+      AnimationNorth: {fileID: 11400000, guid: edf6dfd374dc5994e9f6cfb0cdc662fd, type: 2}
+      AnimationSouth: {fileID: 11400000, guid: 47171300985f67b40a580bd9a891c13f, type: 2}
+      AnimationEast: {fileID: 11400000, guid: caa6f994e7c8a2f47bf415fd952116b7, type: 2}
+      AnimationWest: {fileID: 11400000, guid: f1f979bfe6a075748b4e981abfcb377d, type: 2}

@@ -4,7 +4,7 @@
     {
         public override void Bump()
         {
-            UnityEngine.Debug.Log("Bump!");
+
         }
     }
 }
