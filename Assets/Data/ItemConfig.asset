@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbcb9c7acaa8504ebec255711e502f0, type: 3}
+  m_Name: ItemConfig
+  m_EditorClassIdentifier: 
+  _items:
+  - Id: KEY
+    Name: Map Room Key
+    ItemSprite: {fileID: 21300000, guid: ba25bbb9cdfa7874d89fd916184cc055, type: 3}
+  - Id: SWORD
+    Name: Sword
+    ItemSprite: {fileID: 21300000, guid: 0a251908378bcb54c8cca2af4935b512, type: 3}
+  - Id: ARMOR
+    Name: Armor
+    ItemSprite: {fileID: 21300000, guid: 00b77a0d844475d4295c36fe87424af8, type: 3}
+  - Id: BOW
+    Name: Bow
+    ItemSprite: {fileID: 21300000, guid: b52d1f550b580914d97a8a3e8782bbbb, type: 3}
+  - Id: LOCKPICK
+    Name: Lockpicks
+    ItemSprite: {fileID: 21300000, guid: 3a3ef2f3f9729544f90aed47354a59bc, type: 3}

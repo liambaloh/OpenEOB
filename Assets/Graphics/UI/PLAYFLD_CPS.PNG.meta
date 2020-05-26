@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: 4393492247240446154
     second: Strafe Right
+  - first:
+      213: 1747887147146421760
+    second: Inventory Left
+  - first:
+      213: 3493600010175725105
+    second: Inventory Right
+  - first:
+      213: -3375335244853906341
+    second: Inventory Slot
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -132,11 +141,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 50
+        y: 51
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,11 +162,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 50
+        y: 51
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,11 +183,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 53
-        y: 50
+        y: 51
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,11 +204,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 32
+        y: 33
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,11 +225,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 33
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,11 +246,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 53
-        y: 32
+        y: 33
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,6 +258,69 @@ TextureImporter:
       bones: []
       spriteID: 0500a0c9f1cfcb442b7cf577d9eb2dab
       internalID: 4393492247240446154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory Left
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb8992e89d138d428a60230a67ee3cc
+      internalID: 1747887147146421760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory Right
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932bfa96751cd5d4484a94c38ce2bae5
+      internalID: 3493600010175725105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory Slot
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8f816a8cada25479e3d04dae4995a6
+      internalID: -3375335244853906341
       vertices: []
       indices: 
       edges: []

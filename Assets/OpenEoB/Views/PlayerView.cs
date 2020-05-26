@@ -70,7 +70,7 @@ namespace OpenEoB.Views
             }
         }
 
-        internal void Setup(MapView mapView)
+        public void Setup(MapView mapView)
         {
             _map = mapView;
         }
