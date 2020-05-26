@@ -1,5 +1,4 @@
-﻿using OpenEoB.Views.PlayerTileEnterViews;
-using OpenEoB.Views.TileObjectActions;
+﻿using OpenEoB.Views.TileObjectActions;
 using UnityEngine;
 
 namespace OpenEoB.Views.ClickableObjectViews

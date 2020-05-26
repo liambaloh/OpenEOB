@@ -10,8 +10,8 @@
         StrafeRight = 6,
         ScrollInventoryForward = 7,
         ScrollInventoryBackward = 8,
+        SelectItemInSlotView0 = 100,
         SelectItemInSlotView1 = 101,
         SelectItemInSlotView2 = 102,
-        SelectItemInSlotView3 = 103,
     }
 }

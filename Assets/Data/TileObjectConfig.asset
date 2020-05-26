@@ -44,3 +44,6 @@ MonoBehaviour:
   - Id: XK
     Prefab: {fileID: 6867094775778387732, guid: 57672044addfd6442a64755aa37191e8,
       type: 3}
+  - Id: XL
+    Prefab: {fileID: 3061126826950203099, guid: 3d72f170aa7384c4f996cd60ca39e0c0,
+      type: 3}

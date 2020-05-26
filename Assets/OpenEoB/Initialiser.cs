@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using OpenEoB.Views;
+using OpenEoB.Views.Items;
 using UnityEngine;
 
 namespace OpenEoB
@@ -10,19 +11,30 @@ namespace OpenEoB
     {
         [SerializeField] private MapView _mapPrefab;
         [SerializeField] private PlayerView _playerPrefab;
+        [SerializeField] private ActiveItemView _activeItemPrefab;
+        [SerializeField] private RectTransform _activeItemParent;
+        [SerializeField] private InventoryView _inventoryPrefab;
+        [SerializeField] private RectTransform _inventoryParent;
 
-        void Start()
+        private void Start()
         {
             Initialise();
         }
 
         private void Initialise()
         {
+            //3D World
             var mapView = Instantiate(_mapPrefab);
-            mapView.GenerateMap("gladstone");
-            
             var playerView = Instantiate(_playerPrefab);
-            playerView.Setup(mapView);
+
+            //UI
+            var inventoryView = Instantiate(_inventoryPrefab, _inventoryParent);
+            var activeItemView = Instantiate(_activeItemPrefab, _activeItemParent);
+
+            mapView.GenerateMap("gladstone");
+            activeItemView.Setup();
+            playerView.Setup(mapView, activeItemView);
+            inventoryView.Setup(playerView);
         }
     }
 }

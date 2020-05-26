@@ -6,7 +6,6 @@ namespace OpenEoB.Views
     {
         private void OnMouseDown()
         {
-            UnityEngine.Debug.Log("Click!");
             Clicked();
         }
 

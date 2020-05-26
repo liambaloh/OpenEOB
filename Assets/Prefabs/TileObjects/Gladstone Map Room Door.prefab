@@ -106,8 +106,9 @@ GameObject:
   - component: {fileID: 6867094775778387732}
   - component: {fileID: 4701589102154675001}
   - component: {fileID: 9177772394524953724}
+  - component: {fileID: 6159989688163406777}
   m_Layer: 0
-  m_Name: Gladstone Tile Door E Locked
+  m_Name: Gladstone Map Room Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,6 +170,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd62e770286b0fb4a94a43228b2d4909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6159989688163406777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822427234217848762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42dd27668015346a4ff86d84d46035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doorParent: {fileID: 1428579032820534911}
+  _togglableEnterView: {fileID: 4701589102154675001}
+  _doorState: 3
+  _doorUnlockEventId: 1
 --- !u!1 &3511403392270764285
 GameObject:
   m_ObjectHideFlags: 0

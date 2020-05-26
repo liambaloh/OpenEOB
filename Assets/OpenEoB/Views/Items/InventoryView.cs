@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using OpenEoB.Config;
 using OpenEoB.Views.UI;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace OpenEoB.Views.Items
         [SerializeField] private ItemConfig _itemConfig;
 
         private Dictionary<int, ItemView> _items;
+        private PlayerView _player;
 
         private void Awake()
         {
@@ -23,8 +25,10 @@ namespace OpenEoB.Views.Items
             }
         }
 
-        private void Start()
+        public void Setup(PlayerView player)
         {
+            _player = player;
+
             for (var i = 0; i < _inventorySlotViews.Count; i++)
             {
                 _inventorySlotViews[i].Setup(this, i);
@@ -33,6 +37,14 @@ namespace OpenEoB.Views.Items
             InputManager.Instance.RegisterAction(Command.ScrollInventoryForward, this, ScrollInventoryForward);
             InputManager.Instance.RegisterAction(Command.ScrollInventoryBackward, this, ScrollInventoryBackward);
             
+            InputManager.Instance.RegisterAction(Command.SelectItemInSlotView0, this,
+                () => { PutOrTakeItemFromSlotView(0); });
+            InputManager.Instance.RegisterAction(Command.SelectItemInSlotView1, this,
+                () => { PutOrTakeItemFromSlotView(1); });
+            InputManager.Instance.RegisterAction(Command.SelectItemInSlotView2, this,
+                () => { PutOrTakeItemFromSlotView(2); });
+
+            //todo remove
             var item1 = new ItemView(_itemConfig.GetItemDatum("KEY"));
             var item2 = new ItemView(_itemConfig.GetItemDatum("SWORD"));
             var item3 = new ItemView(_itemConfig.GetItemDatum("ARMOR"));
@@ -45,6 +57,35 @@ namespace OpenEoB.Views.Items
             SetItemInInventorySlot(18, item5);
         }
 
+        private void PutOrTakeItemFromSlotView(int slotViewIndex)
+        {
+            var inventoryItemIndex = _inventorySlotViews[slotViewIndex].InventoryItemIndex;
+            if (_player.HasActiveItem())
+            {
+                var playerActiveItem = _player.GetActiveItem();
+                if (IsInventorySlotFilled(inventoryItemIndex))
+                {
+                    var itemPreviouslyInItemSlot = GetItemInInventorySlot(inventoryItemIndex);
+                    _player.SetActiveItem(itemPreviouslyInItemSlot);
+                }
+                else
+                {
+                    _player.RemoveActiveItem();
+                }
+
+                SetItemInInventorySlot(inventoryItemIndex, playerActiveItem);
+            }
+            else
+            {
+                if (IsInventorySlotFilled(inventoryItemIndex))
+                {
+                    var itemPreviouslyInItemSlot = GetItemInInventorySlot(inventoryItemIndex);
+                    _player.SetActiveItem(itemPreviouslyInItemSlot);
+                    RemoveItemInInventorySlot(inventoryItemIndex);
+                }
+            }
+        }
+
         public bool IsInventorySlotFilled(int slotIndex)
         {
             return _items[slotIndex] != null;
@@ -55,6 +96,12 @@ namespace OpenEoB.Views.Items
             //todo swap
             //todo remove from previous slot, if present
             _items[slotIndex] = item;
+            UpdateDisplayForInventoryItemSlot(slotIndex);
+        }
+
+        public void RemoveItemInInventorySlot(int slotIndex)
+        {
+            _items[slotIndex] = null;
             UpdateDisplayForInventoryItemSlot(slotIndex);
         }
 

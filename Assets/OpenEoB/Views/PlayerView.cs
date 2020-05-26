@@ -1,4 +1,5 @@
 ﻿using System;
+using OpenEoB.Views.Items;
 using OpenEoB.Views.UI;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace OpenEoB.Views
 {
     public class PlayerView : MonoBehaviour
     {
+        public static PlayerView Instance;
+
         private const int North = 1;
         private const int South = 2;
         private const int East = 4;
@@ -16,7 +19,10 @@ namespace OpenEoB.Views
 
         [SerializeField] private TileView _location;
         private MapView _map;
+        private ActiveItemView _activeItemView;
         private int _facing = 1;
+
+        private ItemView _activeItem;
 
         public void Teleport(TileView _tileView)
         {
@@ -24,8 +30,20 @@ namespace OpenEoB.Views
             this.transform.position = _location.transform.position;
         }
 
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                throw new Exception("Player Instance is not null");
+            }
+
+            Instance = this;
+        }
+
         private void Start()
         {
+            DontDestroyOnLoad(this);
+
             InputManager.Instance.RegisterAction(Command.MoveForward, this, MoveForward);
             InputManager.Instance.RegisterAction(Command.MoveBackward, this, MoveBackward);
             InputManager.Instance.RegisterAction(Command.TurnLeft, this, FaceLeft);
@@ -70,9 +88,32 @@ namespace OpenEoB.Views
             }
         }
 
-        public void Setup(MapView mapView)
+        public void Setup(MapView mapView, ActiveItemView activeItemView)
         {
             _map = mapView;
+            _activeItemView = activeItemView;
+        }
+
+        public void SetActiveItem(ItemView item)
+        {
+            _activeItem = item;
+            _activeItemView.SetItemSprite(_activeItem.ItemSprite);
+        }
+
+        public void RemoveActiveItem()
+        {
+            _activeItem = null;
+            _activeItemView.RemoveItemSprite();
+        }
+
+        public bool HasActiveItem()
+        {
+            return _activeItem != null;
+        }
+
+        public ItemView GetActiveItem()
+        {
+            return _activeItem;
         }
 
         #region Movement and Facing
