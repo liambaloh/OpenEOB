@@ -28,15 +28,15 @@ MonoBehaviour:
     - NpcState: 2
       AnimationFrameTime: 0.4
       AnimationGeneral: {fileID: 0}
-      AnimationNorth: {fileID: 0}
-      AnimationSouth: {fileID: 0}
-      AnimationEast: {fileID: 0}
-      AnimationWest: {fileID: 0}
-    - NpcState: 3
-      AnimationFrameTime: 0.2
-      AnimationGeneral: {fileID: 11400000, guid: 7347467405bd677459209df0a094e240,
-        type: 2}
       AnimationNorth: {fileID: 11400000, guid: edf6dfd374dc5994e9f6cfb0cdc662fd, type: 2}
       AnimationSouth: {fileID: 11400000, guid: 47171300985f67b40a580bd9a891c13f, type: 2}
       AnimationEast: {fileID: 11400000, guid: caa6f994e7c8a2f47bf415fd952116b7, type: 2}
       AnimationWest: {fileID: 11400000, guid: f1f979bfe6a075748b4e981abfcb377d, type: 2}
+    - NpcState: 3
+      AnimationFrameTime: 0.2
+      AnimationGeneral: {fileID: 11400000, guid: 7347467405bd677459209df0a094e240,
+        type: 2}
+      AnimationNorth: {fileID: 0}
+      AnimationSouth: {fileID: 0}
+      AnimationEast: {fileID: 0}
+      AnimationWest: {fileID: 0}
