@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using JetBrains.Annotations;
 using PNGNet;
 using SS13;
 using UnityEngine;
@@ -11,7 +9,7 @@ using Debug = UnityEngine.Debug;
 
 public class pngtest : MonoBehaviour
 {
-    public string DmiFolder = Application.streamingAssetsPath + "/turf";
+    public string DmiFolder = Application.streamingAssetsPath;
     private PNGBitmap _img;
     public MeshRenderer renderer;
     public MeshFilter mesh;
@@ -30,6 +28,10 @@ public class pngtest : MonoBehaviour
 
         foreach (var file in files)
         {
+            
+            var Name = Path.GetFileNameWithoutExtension(file);
+            if (Name != "pets") continue;
+
             stopwatch.Reset();
             stopwatch.Start();
             dmiFile = new DmiFile(file);
@@ -45,6 +47,7 @@ public class pngtest : MonoBehaviour
             renderer.material.renderQueue = 2450;
             stopwatch.Stop();
             times.Add(new Tuple<string, double>(file, stopwatch.Elapsed.TotalSeconds));
+            break;
         }
 
         foreach (var tuple in times)
@@ -54,36 +57,36 @@ public class pngtest : MonoBehaviour
 
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    timer -= Time.deltaTime;
-    //    if (timer <= 0)
-    //    {
-    //        timer += 0.5f;
-    //        foreach (var dmiState in dmiFile.States)
-    //        {
-    //            if (dmiState.StateName != "iron0")
-    //            {
-    //                continue;
-    //            }
-    //            
-    //            
-    //            var uv = dmiState.GetUV(dir, frame);
-    //            var uvStateSize = dmiState.GetUVStateSize();
-    //
-    //            var uvBottomLeft = uv;
-    //            var uvBottomRight = new Vector2(uvBottomLeft.x + uvStateSize.x, uvBottomLeft.y);
-    //            var uvTopLeft = new Vector2(uvBottomLeft.x, uvBottomLeft.y + uvStateSize.y);
-    //            var uvTopRight = new Vector2(uvBottomLeft.x + uvStateSize.x, uvBottomLeft.y + uvStateSize.y);
-    //
-    //            mesh.mesh.SetUVs(0, new List<Vector2>(){uvBottomLeft, uvBottomRight, uvTopLeft, uvTopRight});
-    //            frame++;
-    //            frame %= dmiState.FramesCount;
-    //        }
-    //
-    //
-    //    }
-    //
-    //}
+    // Update is called once per frame
+    void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            timer += 0.5f;
+            foreach (var dmiState in dmiFile.States)
+            {
+                if (dmiState.StateName != "corgi")
+                {
+                    continue;
+                }
+                
+                
+                var uv = dmiState.GetUV(dir, frame);
+                var uvStateSize = dmiState.GetUVStateSize();
+    
+                var uvBottomLeft = uv;
+                var uvBottomRight = new Vector2(uvBottomLeft.x + uvStateSize.x, uvBottomLeft.y);
+                var uvTopLeft = new Vector2(uvBottomLeft.x, uvBottomLeft.y + uvStateSize.y);
+                var uvTopRight = new Vector2(uvBottomLeft.x + uvStateSize.x, uvBottomLeft.y + uvStateSize.y);
+    
+                mesh.mesh.SetUVs(0, new List<Vector2>(){uvBottomLeft, uvBottomRight, uvTopLeft, uvTopRight});
+                frame++;
+                frame %= dmiState.FramesCount;
+            }
+    
+    
+        }
+    
+    }
 }
