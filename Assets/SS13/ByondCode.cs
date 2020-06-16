@@ -17,8 +17,11 @@ namespace SS13
         Curly = 3,
         SingleLineComment = 4,
         MultiLineComment = 5,
-        String = 6,
-        PreprocessorDirective = 7,
+        StringUnlocked = 6,
+        StringLocked = 7,
+        FilePath = 8,
+        PreprocessorDirective = 9,
+        MultiLineString = 10,
     }
 
     public class BracketedSection
@@ -67,6 +70,7 @@ namespace SS13
                 var lastCharacter = ' ';
                 var wasANonBlankCharacterFoundInLine = false;
                 var isFirstNonBlankCharacterInLine = false;
+                var isThisCharacterEscaped = false;
 
                 while (bracketStack.Count > 0 && (bracketStack.Peek() == BracketType.SingleLineComment ||
                                                   bracketStack.Peek() == BracketType.PreprocessorDirective))
@@ -80,10 +84,10 @@ namespace SS13
                 {
                     var currentCharacter = line[j];
 
-                    var braceletStackTop = BracketType.None;
+                    var bracketStackTop = BracketType.None;
                     if (bracketStack.Count > 0)
                     {
-                        braceletStackTop = bracketStack.Peek();
+                        bracketStackTop = bracketStack.Peek();
                     }
 
                     if (isFirstNonBlankCharacterInLine)
@@ -97,7 +101,7 @@ namespace SS13
                         isFirstNonBlankCharacterInLine = true;
                     }
 
-                    if (braceletStackTop == BracketType.SingleLineComment)
+                    if (bracketStackTop == BracketType.SingleLineComment)
                     {
                         //No way to close a single-line comment until next row
                         bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
@@ -105,9 +109,30 @@ namespace SS13
                         continue;
                     }
 
+                    if (isThisCharacterEscaped)
+                    {
+                        isThisCharacterEscaped = false;
+                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                        lastCharacter = ' ';
+                        continue;
+                    }
+
+                    if (currentCharacter == '\\')
+                    {
+                        if (bracketStackTop == BracketType.MultiLineComment ||
+                            bracketStackTop == BracketType.StringUnlocked ||
+                            bracketStackTop == BracketType.FilePath)
+                        {
+                            isThisCharacterEscaped = true;
+                            bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                            lastCharacter = ' ';
+                            continue;
+                        }
+                    }
+
                     if (bracketStack.Count > 0)
                     {
-                        switch (braceletStackTop)
+                        switch (bracketStackTop)
                         {
                             case BracketType.None:
                                 break;
@@ -161,8 +186,44 @@ namespace SS13
                                 }
 
                                 break;
-                            case BracketType.String:
-                                if (lastCharacter != '\\' && currentCharacter == '"')
+                            case BracketType.StringUnlocked:
+                                if (currentCharacter == '"')
+                                {
+                                    bracketStack.Pop();
+                                    bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                                    bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                                    lastCharacter = ' ';
+                                    currentCharacter = ' ';
+                                    continue;
+                                }
+
+                                break;
+                            case BracketType.StringLocked:
+                                if (currentCharacter == '@')
+                                {
+                                    bracketStack.Pop();
+                                    bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                                    bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                                    lastCharacter = ' ';
+                                    currentCharacter = ' ';
+                                    continue;
+                                }
+
+                                break;
+                            case BracketType.FilePath:
+                                if (currentCharacter == '\'')
+                                {
+                                    bracketStack.Pop();
+                                    bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                                    bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                                    lastCharacter = ' ';
+                                    currentCharacter = ' ';
+                                    continue;
+                                }
+
+                                break;
+                            case BracketType.MultiLineString:
+                                if (lastCharacter == '"' && currentCharacter == '}')
                                 {
                                     bracketStack.Pop();
                                     bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
@@ -180,10 +241,56 @@ namespace SS13
                         }
                     }
 
-                    braceletStackTop = BracketType.None;
+                    bracketStackTop = BracketType.None;
                     if (bracketStack.Count > 0)
                     {
-                        braceletStackTop = bracketStack.Peek();
+                        bracketStackTop = bracketStack.Peek();
+                    }
+
+                    if (bracketStackTop == BracketType.MultiLineComment)
+                    {
+                        //In a multi-line comment, no other bracket types can be opened from this until it's closed
+                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                        lastCharacter = currentCharacter;
+                        continue;
+                    }
+
+                    if (bracketStackTop == BracketType.StringLocked)
+                    {
+                        //Cannot start any kind of bracket from within a string
+                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                        lastCharacter = currentCharacter;
+                        continue;
+                    }
+
+                    if (bracketStackTop == BracketType.FilePath)
+                    {
+                        //Cannot start any kind of bracket from within a string
+                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                        lastCharacter = currentCharacter;
+                        continue;
+                    }
+
+                    if (currentCharacter == '[')
+                    {
+                        bracketStack.Push(BracketType.Square);
+                        bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                    }
+
+                    if (bracketStackTop == BracketType.StringUnlocked)
+                    {
+                        //Cannot start any kind of bracket from within a string
+                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                        lastCharacter = currentCharacter;
+                        continue;
+                    }
+
+                    if (bracketStackTop == BracketType.MultiLineString)
+                    {
+                        //Cannot start any kind of bracket from within a string
+                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
+                        lastCharacter = currentCharacter;
+                        continue;
                     }
 
                     if (isFirstNonBlankCharacterInLine && currentCharacter == '#')
@@ -196,30 +303,16 @@ namespace SS13
                         continue;
                     }
 
-                    if (braceletStackTop == BracketType.MultiLineComment)
-                    {
-                        //In a multi-line comment, no other bracket types can be opened from this until it's closed
-                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
-                        lastCharacter = currentCharacter;
-                        continue;
-                    }
-
-                    if (braceletStackTop == BracketType.String)
-                    {
-                        //Cannot start any kind of bracket from within a string
-                        bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
-                        lastCharacter = currentCharacter;
-                        continue;
-                    }
-
                     if (lastCharacter == '/' && currentCharacter == '/')
                     {
                         //Start of a single-line comment
-                        bracketedCode.Last.Value.CodeFragment.Remove(bracketedCode.Last.Value.CodeFragment.Length - 1, 1);
+                        bracketedCode.Last.Value.CodeFragment.Remove(bracketedCode.Last.Value.CodeFragment.Length - 1,
+                            1);
                         if (bracketedCode.Last.Value.CodeFragment.Length == 0)
                         {
                             bracketedCode.RemoveLast();
                         }
+
                         bracketStack.Push(BracketType.SingleLineComment);
                         bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
                         bracketedCode.Last.Value.CodeFragment.Append(lastCharacter);
@@ -231,11 +324,13 @@ namespace SS13
                     if (lastCharacter == '/' && currentCharacter == '*')
                     {
                         //Start of a multi-line comment
-                        bracketedCode.Last.Value.CodeFragment.Remove(bracketedCode.Last.Value.CodeFragment.Length - 1, 1);
+                        bracketedCode.Last.Value.CodeFragment.Remove(bracketedCode.Last.Value.CodeFragment.Length - 1,
+                            1);
                         if (bracketedCode.Last.Value.CodeFragment.Length == 0)
                         {
                             bracketedCode.RemoveLast();
                         }
+
                         bracketStack.Push(BracketType.MultiLineComment);
                         bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
                         bracketedCode.Last.Value.CodeFragment.Append(lastCharacter);
@@ -244,7 +339,7 @@ namespace SS13
                         continue;
                     }
 
-                    if (braceletStackTop == BracketType.PreprocessorDirective)
+                    if (bracketStackTop == BracketType.PreprocessorDirective)
                     {
                         //Cannot start strings, (, [ or { brackets from within a preprocessor directive
                         bracketedCode.Last.Value.CodeFragment.Append(currentCharacter);
@@ -258,18 +353,58 @@ namespace SS13
                             bracketStack.Push(BracketType.Regular);
                             bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
                             break;
-                        case '[':
-                            bracketStack.Push(BracketType.Square);
-                            bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
-                            break;
                         case '{':
                             bracketStack.Push(BracketType.Curly);
                             bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
                             break;
                         case '"':
-                            bracketStack.Push(BracketType.String);
+                            if (lastCharacter == '{')
+                            {
+                                bracketedCode.Last.Value.CodeFragment.Remove(
+                                    bracketedCode.Last.Value.CodeFragment.Length - 1, 1);
+                                if (bracketedCode.Last.Value.CodeFragment.Length == 0)
+                                {
+                                    if (bracketStack.Peek() == BracketType.Curly)
+                                    {
+                                        //Remove curly bracket which may have been set when the previous character ({) was encountered
+                                        bracketStack.Pop();
+                                    }
+
+                                    bracketedCode.RemoveLast();
+                                }
+
+                                bracketStack.Push(BracketType.MultiLineString);
+                                bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                                bracketedCode.Last.Value.CodeFragment.Append(lastCharacter);
+                            }
+                            else
+                            {
+                                bracketStack.Push(BracketType.StringUnlocked);
+                                bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                            }
+
+                            break;
+                        case '\'':
+                            bracketStack.Push(BracketType.FilePath);
                             bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
                             break;
+                        case '@':
+                            if (lastCharacter == '@')
+                            {
+                                bracketedCode.Last.Value.CodeFragment.Remove(
+                                    bracketedCode.Last.Value.CodeFragment.Length - 1, 1);
+                                if (bracketedCode.Last.Value.CodeFragment.Length == 0)
+                                {
+                                    bracketedCode.RemoveLast();
+                                }
+
+                                bracketStack.Push(BracketType.StringLocked);
+                                bracketedCode.AddLast(new BracketedSection(new Stack<BracketType>(bracketStack)));
+                                bracketedCode.Last.Value.CodeFragment.Append(lastCharacter);
+                            }
+
+                            break;
+                        case '[':
                         case '/':
                         case '*':
                         case '#':
@@ -286,22 +421,32 @@ namespace SS13
 
                 bracketedCode.Last.Value.CodeFragment.Append('\n');
             }
+            
+            var logFileLocation = Application.persistentDataPath + @"\BracketedByondCode0.txt";
 
-            var logFileLocation = Application.persistentDataPath + @"\BracketedByondCode.txt";
+            for (var i = 0; i < 1000; i++)
+            {
+                logFileLocation = Application.persistentDataPath + @"\BracketedByondCode"+i+".txt";
+                if (!File.Exists(logFileLocation))
+                {
+                    break;
+                }
+            }
 
-            using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter(logFileLocation))
+            using (var file = new StreamWriter(logFileLocation))
             {
                 foreach (var bracketedCodeEntry in bracketedCode)
                 {
-                    file.WriteLine("\nBRACKETED CODE SECTION: "+BracketStackToString(bracketedCodeEntry.BracketStack));
+                    file.WriteLine("\nBRACKETED CODE SECTION: " +
+                                   BracketStackToString(bracketedCodeEntry.BracketStack));
                     file.WriteLine(bracketedCodeEntry.CodeFragment);
                 }
             }
 
             Debug.Log("Bracket Log File Saved: " + logFileLocation);
-
             Debug.Log("DONE PREPROCESSING BYOND CODE");
+
+            return;
 
             var tabStack = new Stack<List<string>>();
             var currentIndentNode = _codeTreeRoot;
